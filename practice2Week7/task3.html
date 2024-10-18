@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task3</title>
+</head>
+<body>
+<form onsubmit="calculate(event)">
+  <h2><label>Let’s calculate your BMI</label></h2>
+  <input type="number" id="weight" placeholder="Enter your weight in kg" required>
+  <input type="number" id="height" placeholder="Enter your height in cm" required>
+  <button type="submit">Enter</button>
+  <p id="result"></p>
+</form>
+
+<script>
+  function calculate(event) {
+    event.preventDefault();
+    let weight = document.getElementById("weight").value;
+    let height = document.getElementById("height").value;
+    let BMI = weight / Math.pow((height / 100), 2);
+    let result;
+
+    if (BMI < 18.5) {
+      result = "Your BMI is " + BMI.toFixed(2) + ", so you are underweight.";
+    } else if (BMI > 24.9) {
+      result = "Your BMI is " + BMI.toFixed(2) + ", so you are overweight.";
+    } else {
+      result = "Your BMI is " + BMI.toFixed(2) + ", so you have a normal weight.";
+    }
+
+    document.getElementById("result").textContent = result;
+  }
+</script>
+</body>
+</html>

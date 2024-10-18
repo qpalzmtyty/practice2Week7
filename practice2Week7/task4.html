@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task4</title>
+</head>
+<body>
+<h2>Who’s buying lunch today?</h2>
+<button onclick="showWhoIsBuyingLunch()">Find Out</button>
+<p id="result"></p>
+
+<script>
+    function whoIsBuyingLunch(names) {
+        let randomIndex = Math.floor(Math.random() * names.length);
+        let randomName = names[randomIndex];
+        return randomName + " is going to buy lunch today.";
+    }
+
+    function showWhoIsBuyingLunch() {
+        // Example array of names
+        let names = ["Aidana", "Bekbolat", "Mariya", "Aleksandr", "Diana"];
+        // Get the result from the function
+        let result = whoIsBuyingLunch(names);
+        // Display the result in the paragraph element
+        document.getElementById("result").textContent = result;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task1</title>
+</head>
+<body>
+    <form onsubmit="enter(event)">
+        <h2><label for="name">What is your name?</label></h2>
+        <input type="text" id="name" placeholder="Enter your name">
+        <button type="submit">Enter</button>
+        <p>Hello <span id="result"></span></p>
+    </form>
+
+    <script>
+        function enter(event) {
+            event.preventDefault();
+            let name = document.getElementById("name").value;
+            let res = name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+            document.getElementById("result").textContent = res;
+        }
+    </script>
+</body>
+</html>
